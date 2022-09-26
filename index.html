@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Fast and Small JavaScript Carousel - Fast JS carousel - ExS Carousel</title>
+		<meta description="Very fast and small JavaScript Carousel (fast JS carousel). With touch screens support. Has dots and arrows navigation. Only 2kB of JS and 1kB of CSS code.">
+		<style>
+			
+			body {
+				background:#fff;
+				color:#111;
+				font-family: sans-serif;
+				font-size: 18px;
+				line-height: 1.6;
+				
+			}
+			img{
+				max-width: 100%;
+			}
+			h1,h2,h3,h4 {
+				line-height: 1.3;
+				margin-bottom: .5em;
+			}
+			p {
+				margin-bottom: 2em;
+			}
+			ul,ol,dl {
+				padding-left: 20px;
+				margin-bottom: 2em;
+			}
+			dl{
+				padding-left: 0;
+			}
+			dt {
+				font-weight: 700;
+			}
+			a {
+				text-decoration: underline;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+			pre{
+				font-family: monospace;
+				background: #f1f1f1;
+				color: #111;
+				padding: 10px 15px;
+				border-radius: 5px;
+				overflow-x: auto;
+				font-size: 16px;
+				margin-bottom: 2em;
+			}
+			code {
+				font-family: monospace;
+				font-size: 16px;
+				background: #f1f1f1;
+				color: #111;
+				padding: 2px 5px;
+				border-radius: 3px;
+			}
+			.container {
+				margin: 50px auto;
+				max-width: 750px;
+				padding: 0 15px;
+			}
+
+			.example-slide {
+				background: #F280B6;
+				color:#fff;
+				font-size: 60px;
+				font-weight: 700;
+				line-height: 1.3;
+				text-align: center;
+				padding: 100px 15px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				
+
+			}
+			.example-slide:nth-child(2) {
+				background: #55A6D9;
+			}
+			.example-slide:nth-child(3) {
+				background: #F2D649;
+			}
+			.example-slide:nth-child(4) {
+				background: #F28B50;
+			}
+			.example-slide:nth-child(5) {
+				background: #F24949;
+			}
+			.example-slide:nth-child(6) {
+				background: #55A6D9;
+			}
+			.example-slide:nth-child(7) {
+				background: #F2D649;
+			}
+			.example-slide:nth-child(8) {
+				background: #F28B50;
+			}
+			.example-button {
+				display: inline-block;
+				margin: 30px 0 0;
+				background-color: #fff;
+				color:#111;
+				font-size: 12px;
+				text-transform: uppercase;
+				padding: 13px 35px;
+				text-decoration: none;
+			}
+
+			.exs-carousel-wrap {
+				margin: 30px 0;
+			}
+		</style>
+		<link rel="stylesheet" href="dist/css/exs-carousel.css">
+	</head>
+	<body>
+
+		<div class="container">
+
+			<h1>
+				<strong>Fast JS Carousel</strong>: ExS Carousel - Extra Small and fast JavaScript Carousel
+			</h1>
+
+			<h2>
+				<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" style="max-width:24px;max-height:24px;"><path d="M332.64,64.58C313.18,43.57,286,32,256,32c-30.16,0-57.43,11.5-76.8,32.38-19.58,21.11-29.12,49.8-26.88,80.78C156.76,206.28,203.27,256,256,256s99.16-49.71,103.67-110.82C361.94,114.48,352.34,85.85,332.64,64.58Z"/><path d="M432,480H80A31,31,0,0,1,55.8,468.87c-6.5-7.77-9.12-18.38-7.18-29.11C57.06,392.94,83.4,353.61,124.8,326c36.78-24.51,83.37-38,131.2-38s94.42,13.5,131.2,38c41.4,27.6,67.74,66.93,76.18,113.75,1.94,10.73-.68,21.34-7.18,29.11A31,31,0,0,1,432,480Z"/></svg>
+				Author: <a href="https://exsthemewp.com" target="_blank">ExS: Fastest and Smallest WordPress Theme</a>
+			</h2>
+
+			<p>It has a very small size: 2kB of JavaScript and 1kB of CSS.</p>
+
+			<h2>Main Features</h2>
+			<ul>
+				<li>1kb of CSS code and 2kb of JavaScript code (minified version)</li>
+				<li>Working with Mouse and Touch events</li>
+				<li>Auto rewind</li>
+				<li>Custom or default CSS selector supported </li>
+				<li>Optional dots navigation auto added by script - no need to manually add your dot buttons in your HTML markup</li>
+				<li>Optional arrows navigation auto added by script - no need to manually add your arrow buttons in your HTML markup</li>
+				<li>Auto init with appropriate <a href="#class-attribute-values"">class attribute values</a> from the HTML code or manually initialized with the <a href="#javascript-initialization-code">config</a> from the JavaScript code.</li>
+			</ul>
+
+
+			<h2>Quick Start</h2>
+			<ul>
+				<li>Clone or download this repository.</li>
+				<li>Include your <a href="#inlucde-your-assets">CSS and JavaScript files</a>.</li>
+				<li>Add your <a href="#carousel-html-markup">Carousel HTML Markup</a></li>
+			</ul>
+			<h3 id="inlucde-your-assets">Inlucde your assets:</h3>
+<pre>
+    &lt;link rel="stylesheet" href="dist/css/exs-carousel.css"&gt;
+    &lt;script src="dist/js/exs-carousel.js"&gt;&lt;/script&gt;
+</pre>
+
+			<h2>Basic example with auto init:</h2>
+			<p>Sometimes you have a control on your HTML markup but have no control on your JavaScript code. Auto initialization feature will be very useful in this situation.</p>
+			<div class="exs-carousel autoinit dots arrows" data-interval="6000">
+				<div>
+					<img src="demo/img/carousel1.jpg" alt="Example Image">
+				</div>
+				<div>
+					<img src="demo/img/carousel2.jpg" alt="Example Image">
+				</div>
+				<div>
+					<img src="demo/img/carousel3.jpg" alt="Example Image">
+				</div>
+			</div>
+
+			<h3 id="carousel-html-markup">Carousel HTML Markup</h3>
+
+<pre>
+&lt;div class="exs-carousel autoinit autoplay dots arrows"&gt;
+    &lt;div&gt;
+        &lt;img src="demo/img/carousel1.jpg"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src="demo/img/carousel2.jpg"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src="demo/img/carousel3.jpg"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+			<h3 id="class-attribute-values">Class attribute values</h3>
+			<dl>
+				<dt>autoinit</dt>
+				<dd>Add 'autoinit' class to your '.exs-carousel' element for automatic initialization without writting any line of additional JS code.</dd>
+
+				<dt>autoplay</dt>
+				<dd>Add 'autoplay' class for your '.exs-carousel' element to enable auto slide. Default interval is 5 seconds.</dd>
+
+				<dt>dots</dt>
+				<dd>Add 'dots' class for your '.exs-carousel' element to auto create your dots carousel navigation.</dd>
+
+				<dt>arrows</dt>
+				<dd>Add 'arrows' class for your '.exs-carousel' element to auto create your arrows carousel navigation.</dd>
+			</dl>
+
+
+			<h2>Manual initialization from the JavaScript code with config a object</h2>
+
+			<p>In the opposite of the example above you can have some cusotm HTML markup that you cannot control. You can use JavaScript initialization in this case.</p>
+
+
+			<h3>Custom element with init in the JavaScript code</h3>
+			<div class="custom-carousel-class">
+				<div class="example-slide">
+					Slide 1
+				</div>
+				<div class="example-slide">
+					Slide 2
+				</div>
+				<div class="example-slide">
+					Slide 3
+				</div>
+				<div class="example-slide">
+					Slide 4
+				</div>
+				<div class="example-slide">
+					Slide 5
+				</div>
+			</div>
+			<h4>Custom carousel HTML markup</h4>
+<pre>
+&lt;div class="custom-carousel-class"&gt;
+    &lt;div class="example-slide"&gt;
+        Slide 1
+    &lt;/div&gt;
+    &lt;div class="example-slide"&gt;
+        Slide 2
+    &lt;/div&gt;
+    &lt;div class="example-slide"&gt;
+        Slide 3
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+			<h4 id="javascript-initialization-code">JavaScript initialization code</h4>
+			
+<pre>
+&lt;script&gt;
+    exsCarousel({
+        selector:'.custom-carousel-class',
+        dots:true,
+        arrows:true,
+        autoplay:true,
+        interval:3000
+    });
+&lt;/script&gt;
+</pre>
+
+			<p>JavaScript initialization object properties are very similar to CSS class values:</p>
+
+			<dl>
+				<dt>selector</dt>
+				<dd>Custom CSS selector for your carousel HTML element.</dd>
+
+				<dt>autoplay</dt>
+				<dd>Add 'autoplay' object property to enable automatic carousel sliding. (true or false, default - false).</dd>
+
+				<dt>dots</dt>
+				<dd>Add 'dots' object property to add a dots navigation for your carousel. (true or false, default - false).</dd>
+
+				<dt>arrows</dt>
+				<dd>Add 'arrows' object property to add a arrows navigation for your carousel. (true or false, default - false).</dd>
+
+				<dt>interval</dt>
+				<dd>Custom interval if you're using autoplay option. Default is 5000 milliseconds (5 seconds).</dd>
+			</dl>
+
+
+			<h2>Changing default interval:</h2>
+
+			<h3>From the HTML code</h3>
+			
+			<p>Add <code>data-interval="3000"</code> custom HTML attribute. <code>autoplay</code> class can be omitted in this case.</p>
+<pre>
+    &lt;div class="exs-carousel autoinit dots arrows" data-interval="6000"&gt;
+</pre>
+
+			<h3>From the JavaScript code</h3>
+			<p>Add <code>interval</code> object property to your initialization object when calling the <code>exsCarousel</code> function. Value should be a number of milliseconds.</p>
+
+<pre>
+&lt;script&gt;
+    exsCarousel({
+        ...
+        interval:3000,
+        ...
+    });
+&lt;/script&gt;
+</pre>
+
+			<h2>Limitations</h2>
+
+			<ul>
+				<li>Images should be same height for the better UX.</li>
+				<li>Only one slide is visible (no columns) at the moment.</li>
+				<li>Arrows and dots cannot be moved outside of slides.</li>
+			</ul>
+
+			<h2>Development</h2>
+
+			<ul>
+				<li>Clone repository.</li>
+				<li>Open your repository directory into your terminal.</li>
+				<li>Run <code>npm i</code> command.</li>
+				<li>To start your dev server run <code>gulp</code> command.</li>
+				<li>Make changes into your <i>dist</i> directory.</li>
+				<li>To build your project run <code>gulp build</code> command.</li>
+			</ul>
+
+			<h2>Copyright and license</h2>
+
+			<p>Copyright 2020–2022 the <a target="_blank" href="https://exsthemewp.com">ExS WordPress Theme</a>. Code released under the MIT License</p>
+
+			<h3>Demo images</h3>
+
+			<p>Copyright <a target="_blank" href="https://pxhere.com">pxhere.com</a>:</p>
+			<ul>
+				<li><a target="_blank" href="https://pxhere.com/en/photo/919919">https://pxhere.com/en/photo/919919</a></li>
+				<li><a target="_blank" href="https://pxhere.com/en/photo/919915">https://pxhere.com/en/photo/919915</a></li>
+				<li><a target="_blank" href="https://pxhere.com/en/photo/765310">https://pxhere.com/en/photo/765310</a></li>
+			</ul>
+		</div>
+
+		<!-- global exsCarousel function. Auto init with default values if 'autoinit' class is added to the 'exs-carousel' class -->
+		<script src="dist/js/exs-carousel.js"></script>
+		<!-- manual init with custom config values -->
+		<script>
+			exsCarousel({
+				selector:'.custom-carousel-class',
+				dots:true,
+				arrows:true,
+				autoplay:true,
+				interval:3000
+			});
+		</script>
+	</body>
+</html>
