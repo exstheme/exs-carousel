@@ -3,6 +3,10 @@
 
 It has a very small size: 2kB of JavaScript and 1kB of CSS.
 
+Demo:
+----
+[https://exs-carousel.exsthemewp.com/](https://exs-carousel.exsthemewp.com/)
+
 Main Features
 -------------
 
